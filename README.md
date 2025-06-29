@@ -28,9 +28,7 @@ classDiagram
     + numberOfSides(): int
   }
 
-  class Square {
-    + inherits Rectangle
-  }
+  class Square
 
   class RightTriangle {
     - legA: double
@@ -40,9 +38,7 @@ classDiagram
     + numberOfSides(): int
   }
 
-  class IsoscelesRightTriangle {
-    + inherits RightTriangle
-  }
+  class IsoscelesRightTriangle
 
   class Parallelogram {
     - base: double
@@ -65,4 +61,5 @@ classDiagram
   %% === Interface Implementations ===
   Polygon <|.. Rectangle
   Polygon <|.. RightTriangle
-  Polygon <|.. Parallelogram```
+  Polygon <|.. Parallelogram
+```
