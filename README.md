@@ -28,7 +28,9 @@ classDiagram
     + numberOfSides(): int
   }
 
-  class Square
+  class Square{
+    // inherits Rectangle
+  }
 
   class RightTriangle {
     - legA: double
@@ -38,7 +40,9 @@ classDiagram
     + numberOfSides(): int
   }
 
-  class IsoscelesRightTriangle
+  class IsoscelesRightTriangle{
+    //inherits Right Triangle
+  }
 
   class Parallelogram {
     - base: double
