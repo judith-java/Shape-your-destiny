@@ -1,31 +1,68 @@
-# Shape Your Destiny (Java)
+```mermaid
+classDiagram
+  %% === Interfaces ===
+  class Polygon {
+    <<interface>>
+    + numberOfSides(): int
+  }
 
-You can find the instructions for this lab [here](https://morethanequations.com/Computer-Science/Labs/Shape-Your-Destiny). Create a new repository on GitHub to house your code. Be sure to make the repository public so that I can view and grade it.
+  %% === Abstract Base Class ===
+  class Shape {
+    <<abstract>>
+    + getArea(): double
+    + getPerimeter(): double
+  }
 
-We will use [Gradle](https://gradle.org/) to automate common development tasks.
+  %% === Concrete Classes ===
+  class Circle {
+    - radius: double
+    + getArea(): double
+    + getPerimeter(): double
+  }
 
-## Building the App
+  class Rectangle {
+    - length: double
+    - width: double
+    + getArea(): double
+    + getPerimeter(): double
+    + numberOfSides(): int
+  }
 
-You can build the app using:
+  class Square {
+    + inherits Rectangle
+  }
 
-```bash
-./gradlew build
-```
+  class RightTriangle {
+    - legA: double
+    - legB: double
+    + getArea(): double
+    + getPerimeter(): double
+    + numberOfSides(): int
+  }
 
-## Testing the App
+  class IsoscelesRightTriangle {
+    + inherits RightTriangle
+  }
 
-You can run the automated suite of tests using:
+  class Parallelogram {
+    - base: double
+    - height: double
+    - side: double
+    + getArea(): double
+    + getPerimeter(): double
+    + numberOfSides(): int
+  }
 
-```bash
-./gradlew test
-```
+  %% === Inheritance Relationships ===
+  Shape <|-- Circle
+  Shape <|-- Rectangle
+  Shape <|-- RightTriangle
+  Shape <|-- Parallelogram
 
-## Running the App
+  Rectangle <|-- Square
+  RightTriangle <|-- IsoscelesRightTriangle
 
-You can run the app using:
-
-```bash
-./gradlew run --quiet --console=plain
-```
-
-The two flags passed to the `run` command hide the noisy output from Gradle. You can see the details from Gradle by omitting those flags.
+  %% === Interface Implementations ===
+  Polygon <|.. Rectangle
+  Polygon <|.. RightTriangle
+  Polygon <|.. Parallelogram```
